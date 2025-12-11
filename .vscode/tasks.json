@@ -10,9 +10,9 @@
       "problemMatcher": ["$gcc"]
     },
     {
-      "label": "MPI_Bcast_And_Reduce.cmd",
+      "label": "MPI_Parallel_Sum.cmd",
       "type": "shell",
-      "command": "MPI_Bcast_And_Reduce\\MPI_Bcast_And_Reduce.cmd",
+      "command": "MPI_Parallel_Sum\\MPI_Parallel_Sum.cmd",
       "args": [],
       "group": "build",
       "problemMatcher": ["$gcc"]
@@ -36,13 +36,13 @@
       ]
     },
     {
-      "label": "Run MPI_Bcast_And_Reduce (mpiexec 4 ranks Windows)",
+      "label": "Run MPI_Parallel_Sum (mpiexec 4 ranks Windows)",
       "type": "shell",
       "command": "mpiexec",
       "args": [
         "-n",
         "4",
-        "MPI_Bcast_And_Reduce\\MPI_Bcast_And_Reduce.exe"
+        "MPI_Parallel_Sum\\MPI_Parallel_Sum.exe"
       ]
     },
     {
