@@ -1,0 +1,105 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Build (MinGW64 msmpi)",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "MPI_Hello_World.c",
+        "-I\"$MSMPI_INC\"",
+        "-L\"$MSMPI_LIB64\"",
+        "-lmsmpi",
+        "-o",
+        "MPI_Hello_World.exe"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build with build_mpi.cmd",
+      "type": "shell",
+      "command": "build_mpi.cmd",
+      "args": [],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Build (CMD msmpi)",
+      "type": "shell",
+      "windows": {
+        "command": "g++",
+        "args": [
+          "MPI_Hello_World.c",
+          "-I\"%MSMPI_INC%\"",
+          "-L\"%MSMPI_LIB64%\"",
+          "-lmsmpi",
+          "-o",
+          "MPI_Hello_World.exe"
+        ]
+      },
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Install MPI (Linux)",
+      "type": "shell",
+      "linux": {
+        "command": "sudo",
+        "args": [
+          "apt-get",
+          "install",
+          "-y",
+          "libopenmpi-dev",
+          "openmpi-bin"
+        ]
+      }
+    },
+    {
+      "label": "Build (Linux OpenMPI)",
+      "type": "shell",
+      "linux": {
+        "command": "mpicc",
+        "args": [
+          "MPI_Hello_World.c",
+          "-o",
+          "MPI_Hello_World"
+        ]
+      },
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Run MPI_Hello_World (mpiexec 4 ranks Windows)",
+      "type": "shell",
+      "command": "mpiexec",
+      "args": [
+        "-n",
+        "4",
+        "MPI_Hello_World.exe"
+      ]
+    },
+    {
+      "label": "Run MPI_Bcast_MPI_Reduce (mpiexec 4 ranks Windows)",
+      "type": "shell",
+      "command": "mpiexec",
+      "args": [
+        "-n",
+        "4",
+        "MPI_Bcast_MPI_Reduce.exe"
+      ]
+    },
+    {
+      "label": "Run (mpirun 4 ranks Linux)",
+      "type": "shell",
+      "linux": {
+        "command": "mpirun",
+        "args": [
+          "-np",
+          "4",
+          "./MPI_Hello_World"
+        ]
+      }
+    }
+  ]
+}
