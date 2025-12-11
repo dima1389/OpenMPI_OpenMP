@@ -1,5 +1,1 @@
-find local repo and push to remote first example
-
 comment all the files so that readme is not necessary
-
-Harmonize comments accross files
