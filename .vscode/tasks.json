@@ -18,6 +18,14 @@
       "problemMatcher": ["$gcc"]
     },
     {
+      "label": "MPI_Matrix_Vector.cmd",
+      "type": "shell",
+      "command": "MPI_Matrix_Vector\\MPI_Matrix_Vector.cmd",
+      "args": [],
+      "group": "build",
+      "problemMatcher": ["$gcc"]
+    },
+    {
       "label": "Run MPI_Hello_World (mpiexec 4 ranks Windows)",
       "type": "shell",
       "command": "mpiexec",
@@ -35,6 +43,18 @@
         "-n",
         "4",
         "MPI_Bcast_And_Reduce\\MPI_Bcast_And_Reduce.exe"
+      ]
+    },
+    {
+      "label": "Run MPI_Matrix_Vector (mpiexec 4 ranks Windows)",
+      "type": "shell",
+      "command": "cd MPI_Matrix_Vector && mpiexec",
+      "args": [
+        "-n",
+        "4",
+        "MPI_Matrix_Vector.exe",
+        "Vector.txt",
+        "Matrix.txt"
       ]
     }
   ]
