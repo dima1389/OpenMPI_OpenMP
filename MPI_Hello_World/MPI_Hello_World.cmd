@@ -8,7 +8,7 @@ rem --- Define clean MSMPI paths WITHOUT trailing backslash ---
 set "MSMPI_INC=C:\Program Files (x86)\Microsoft SDKs\MPI\Include"
 set "MSMPI_LIB64=C:\Program Files (x86)\Microsoft SDKs\MPI\Lib\x64"
 
-cd /d D:\Projects\MPS
+cd /d %~dp0
 
 rem --- Build MPI program with MinGW g++ + MSMPI ---
 g++ MPI_Hello_World.c ^
