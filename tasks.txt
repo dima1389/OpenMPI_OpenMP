@@ -1,1 +1,1 @@
-comment all the files so that readme is not necessary
+each function reference to official documentation in MPI_Function_Reference.md
