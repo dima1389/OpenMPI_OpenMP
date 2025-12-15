@@ -43,8 +43,18 @@ if errorlevel 1 (
 echo.
 echo ============================================================
 echo Build successful.
-echo Running MPI program (4 processes)...
 echo ============================================================
+
+echo.
+echo ============================================================
+echo Runtime input required (ENTER ONCE, ONLY ON RANK 0):
+echo   ^<int^> ^<double^> ^<double^>
+echo Example:
+echo   10 3.14 2.718
+echo ============================================================
+
+echo Running MPI program with 4 processes...
+echo.
 
 call mpiexec -n 4 "%OUT%"
 
