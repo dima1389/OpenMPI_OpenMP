@@ -1,4 +1,33 @@
 /*
+ * Toolchain and runtime DLL consistency notice (Windows / MinGW-w64):
+ *
+ * This example uses GCC with OpenMP support under MSYS2 (MinGW-w64).
+ * On Windows, the compiler front-end (cc1plus.exe) dynamically loads
+ * runtime libraries (e.g. zlib1.dll) from directories listed in PATH.
+ * If multiple MSYS2 environments (mingw64, ucrt64) or other toolchains
+ * (Git, Anaconda, Cygwin) are present on PATH, an incompatible zlib1.dll
+ * may be loaded at runtime, resulting in errors such as:
+ *
+ *   "cc1plus.exe – Entry Point Not Found: crc32_combine"
+ *
+ * To avoid DLL mismatches, ensure that a single MinGW-w64 environment
+ * is used and that its bin directory appears first in PATH.
+ *
+ * Recommended environment alignment:
+ *   set "PATH=C:\msys64\mingw64\bin;%PATH%"
+ *
+ * Compilation:
+ *   gcc -fopenmp -Wall OMP_Barrier.c -o OMP_Barrier.exe
+ *
+ * Execution:
+ *   OMP_Barrier.exe
+ *
+ * Notes:
+ * - Do not mix mingw64 and ucrt64 toolchains in the same CMD session.
+ * - Prefer the MSYS2 “MinGW x64” shell for a preconfigured environment.
+ */
+
+/*
  * Standard C header providing input/output functions.
  * In this example, printf() is used to print text to the console.
  */

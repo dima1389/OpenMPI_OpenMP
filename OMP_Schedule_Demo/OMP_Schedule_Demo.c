@@ -34,11 +34,14 @@
  *
  * The difference is HOW loop iterations are distributed among threads.
  *
- * Compilation:
- *   gcc -fopenmp omp_schedule_demo.c -o omp_schedule_demo
+ * Recommended environment alignment:
+ *   set "PATH=C:\msys64\mingw64\bin;%PATH%"
  *
- * Execution:
- *   ./omp_schedule_demo 100000000
+ * Compilation:
+ *   gcc -fopenmp -Wall OMP_Schedule_Demo.c -o OMP_Schedule_Demo
+ *
+ * Example execution:
+ *   OMP_Schedule_Demo 100000000
  *
  * Optional (only affects schedule(runtime)):
  *   export OMP_SCHEDULE="dynamic,4"

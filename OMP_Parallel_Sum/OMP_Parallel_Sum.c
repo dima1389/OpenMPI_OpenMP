@@ -1,4 +1,15 @@
 /*
+ * Recommended environment alignment:
+ *   set "PATH=C:\msys64\mingw64\bin;%PATH%"
+ *
+ * Compilation:
+ *   gcc -fopenmp -Wall OMP_Parallel_Sum.c -o OMP_Parallel_Sum
+ *
+ * Example run:
+ *   OMP_Parallel_Sum 4
+ */
+
+/*
  * Standard C header for basic input/output.
  * Used here for printf() and scanf().
  */

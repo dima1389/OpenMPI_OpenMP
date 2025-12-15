@@ -1,4 +1,15 @@
 /*
+ * Recommended environment alignment:
+ *   set "PATH=C:\msys64\mingw64\bin;%PATH%"
+ *
+ * Compilation:
+ *   gcc -fopenmp -Wall OMP_Hello.c -o OMP_Hello
+ *
+ * Execution:
+ *   OMP_Hello
+ */
+
+/*
  * Standard C header that provides input/output functionality.
  * In this program it is used for the printf() function,
  * which prints text to the standard output (console).
